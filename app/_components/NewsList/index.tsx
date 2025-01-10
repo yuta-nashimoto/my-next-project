@@ -1,22 +1,26 @@
 import Image from "next/image";
 import styles from "./index.module.css";
+// News型を読み込む
 import type { News } from "@/app/_libs/microcms";
 import Date from "../Date";
 import Category from "../Category";
+import Link from "next/link";
 
 type Props = {
   news: News[];
 };
 
-export default function NewsLis({ news }: Props) {
+export default function NewsList({ news }: Props) {
+  // 記事が0件だったら「記事がありません」表示にする
   if (news.length === 0) {
     return <p>記事がありません。</p>;
   }
+  // 記事が1件以上だったらリストを表示する
   return (
     <ul>
       {news.map((article) => (
         <li key={article.id} className={styles.list}>
-          <div className={styles.link}>
+          <Link href={`/news/${article.id}`} className={styles.link}>
             <Image
               className={styles.image}
               src="/no-image.png"
@@ -31,7 +35,7 @@ export default function NewsLis({ news }: Props) {
                 <Date date={article.publishedAt ?? article.createdAt} />
               </dd>
             </dl>
-          </div>
+          </Link>
         </li>
       ))}
     </ul>

@@ -1,8 +1,10 @@
+// コンポーネント/モジュール読み込み
 import Image from "next/image";
 import styles from "./page.module.css";
 import ButtonLink from "./_components/ButtonLink";
-import { News } from "./_libs/microcms";
 import NewsList from "./_components/NewsList";
+// 型の読み込み
+import type { News } from "./_libs/microcms";
 
 const data: { contents: News[] } = {
   contents: [
