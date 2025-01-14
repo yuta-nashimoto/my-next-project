@@ -9,7 +9,7 @@
   display: flex;
   align-items: flex-start;
   gap: 40px;
-  border-radius: var(--border-radius);
+  padding: 24px 0;
 }
 
 .image {
@@ -35,7 +35,6 @@
     display: block;
     padding: 16px 0;
   }
-
   .image {
     display: none;
   }
