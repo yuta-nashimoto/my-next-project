@@ -14,7 +14,7 @@ type Props = {
   };
 };
 
-export async function genarateMetadata({
+export async function generateMetadata({
   params,
   searchParams,
 }: Props): Promise<Metadata> {
