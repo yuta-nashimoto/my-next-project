@@ -66,3 +66,8 @@
     margin-bottom: 1rem;
   }
 }
+
+.fadeIn {
+  opacity: 0;
+  transform: translateY(100px);
+}
